@@ -1,7 +1,22 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "yarn bootstrap",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "fix": "lerna run fix"
+  },
   "devDependencies": {
+    "husky": "^4.2.1",
     "lerna": "^3.20.2"
-  }
+  },
+  "dependencies": {
+    "@jooohn/validated": "file:packages/validated"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
